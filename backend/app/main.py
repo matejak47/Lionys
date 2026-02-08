@@ -62,11 +62,11 @@ app = FastAPI(title="Muj CMS API", version="1.0.0", lifespan=lifespan)
 
 # --- CORS Nastavení ---
 origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://lionys.eu",
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  "https://lionys.eu",
+  "https://api.lionys.eu",
 ]
-
 
 app.add_middleware(
     CORSMiddleware,
