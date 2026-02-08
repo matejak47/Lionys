@@ -1,18 +1,21 @@
-export const getImageUrl = (path) => {
-  if (!path) return null;
+import axios from "axios";
 
-  // 1) Když je to už plná URL, vrať rovnou
-  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:8000/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
-  // 2) Pro obrázky chceme veřejný web (ne /api)
-  const publicBase =
-    import.meta.env.VITE_PUBLIC_URL || window.location.origin;
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
-  const cleanBase = publicBase.endsWith("/")
-    ? publicBase.slice(0, -1)
-    : publicBase;
-
-  const cleanPath = path.startsWith("/") ? path : `/${path}`;
-
-  return `${cleanBase}${cleanPath}`;
-};
+export default api;
