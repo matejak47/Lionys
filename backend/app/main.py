@@ -64,8 +64,9 @@ app = FastAPI(title="Muj CMS API", version="1.0.0", lifespan=lifespan)
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "http://localhost:3000",
+    "https://lionys.eu",
 ]
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -76,17 +77,20 @@ app.add_middleware(
 )
 
 # --- Zbytek aplikace ---
-os.makedirs("app/static/uploads", exist_ok=True)
-app.mount("/static", StaticFiles(directory="uploads"), name="static")
+os.makedirs("uploads", exist_ok=True)
+app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
-app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
-app.include_router(logs.router, prefix="/logs", tags=["Logs"])
-app.include_router(stats.router, prefix="/stats", tags=["Stats"])
-app.include_router(categories.router, prefix="/categories", tags=["Categories"])
-app.include_router(upload.router, prefix="/upload", tags=["Upload"])
-app.include_router(content_items.router, prefix="/content", tags=["Content"])
-app.include_router(users.router, prefix="/users", tags=["Users"])
-app.include_router(messages.router, prefix="/messages", tags=["Messages"])
+
+API_PREFIX = "/api"
+
+app.include_router(auth.router, prefix=f"{API_PREFIX}/auth", tags=["Authentication"])
+app.include_router(logs.router, prefix=f"{API_PREFIX}/logs", tags=["Logs"])
+app.include_router(stats.router, prefix=f"{API_PREFIX}/stats", tags=["Stats"])
+app.include_router(categories.router, prefix=f"{API_PREFIX}/categories", tags=["Categories"])
+app.include_router(upload.router, prefix=f"{API_PREFIX}/upload", tags=["Upload"])
+app.include_router(content_items.router, prefix=f"{API_PREFIX}/content", tags=["Content"])
+app.include_router(users.router, prefix=f"{API_PREFIX}/users", tags=["Users"])
+app.include_router(messages.router, prefix=f"{API_PREFIX}/messages", tags=["Messages"])
 
 
 

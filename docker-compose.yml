@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # --- 1. DATABÁZE (PostgreSQL) ---
   db:
     image: postgres:15-alpine
     volumes:
@@ -13,10 +12,9 @@ services:
     ports:
       - "5432:5432"
 
-  # --- 2. BACKEND (FastAPI) ---
   backend:
     build: ./backend
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     volumes:
       - ./backend:/app
       - static_volume:/app/app/static/uploads
@@ -26,25 +24,19 @@ services:
     environment:
       - DATABASE_URL=postgresql+asyncpg://${DB_USER}:${DB_PASSWORD}@db/${DB_NAME}
       - SECRET_KEY=${SECRET_KEY}
-
-      # ✅ ADMIN SEED – NATVRDO, NEZ .env
+      # ⚠️ Doporučení: admin seed nedávat natvrdo do compose (viz níže)
       - ADMIN_EMAIL=admin@admin.eu
       - ADMIN_PASSWORD=admin
-
     depends_on:
       - db
 
-  # --- 3. FRONTEND (React + Vite) ---
   frontend:
     build: ./frontend
-    command: npm run dev -- --host
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     ports:
-      - "5173:5173"
+      - "5173:80"
+    depends_on:
+      - backend
 
-  # --- 4. NGINX PROXY MANAGER ---
   nginx:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped

@@ -62,7 +62,7 @@ async def process_and_save_image(file: UploadFile) -> dict:
         final_size_bytes = os.path.getsize(file_path)
 
         return {
-            "url": f"/static/{filename}",
+            "url": f"/uploads/{filename}",
             "filename": filename,
             "original_size": original_size_bytes,
             "final_size": final_size_bytes
