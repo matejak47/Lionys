@@ -8,28 +8,44 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
+    # NEOTEVÍRAT PORTY VEN:
+    # ports: []
 
   backend:
     build: ./backend
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
-    ports:
-      - "127.0.0.1:8000:8000"   # ⬅️ přidej toto
     environment:
       DATABASE_URL: postgresql+asyncpg://${DB_USER}:${DB_PASSWORD}@db/${DB_NAME}
       SECRET_KEY: ${SECRET_KEY}
     volumes:
       - ./backend/uploads:/app/uploads
+    restart: unless-stopped
     depends_on:
       - db
-    restart: unless-stopped
+    # NEOTEVÍRAT PORTY VEN:
+    # ports: []
 
   frontend:
     build: ./frontend
-    ports:
-      - "127.0.0.1:3000:80"   # ⬅️ DŮLEŽITÉ
+    restart: unless-stopped
     depends_on:
       - backend
+    # NEOTEVÍRAT PORTY VEN:
+    # ports: []
+
+  nginx:
+    image: jc21/nginx-proxy-manager:latest
     restart: unless-stopped
+    ports:
+      - "80:80"
+      - "81:81"
+      - "443:443"
+    volumes:
+      - ./nginx/data:/data
+      - ./nginx/letsencrypt:/etc/letsencrypt
+    depends_on:
+      - frontend
+      - backend
 
 volumes:
   postgres_data:
