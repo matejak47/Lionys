@@ -1,0 +1,238 @@
+{
+  "app_title": "Mein CMS",
+  "login": {
+    "title": "Anmeldung",
+    "change_required_title": "Passwortänderung erforderlich",
+    "change_info": "Sie haben ein temporäres Passwort erhalten. Bitte setzen Sie ein neues persönliches Passwort, bevor Sie das System verwenden.",
+
+    "email_label": "E-Mail",
+    "password_label": "Passwort",
+    "submit_btn": "Anmelden",
+
+    "old_password_label": "Aktuelles Passwort",
+    "new_password_label": "Neues Passwort",
+    "confirm_password_label": "Neues Passwort bestätigen",
+    "change_submit_btn": "Passwort ändern",
+
+    "password_mismatch": "Das neue Passwort und die Bestätigung stimmen nicht überein.",
+    "old_password_error": "Das aktuelle Passwort ist nicht korrekt.",
+    "generic_error": "Bei der Verarbeitung der Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "menu": {
+    "dashboard": "Übersicht",
+    "content_group": "Inhaltsverwaltung",
+    "content_items": "Inhaltselemente",
+    "categories": "Kategorien",
+    "gallery": "Galerie",
+    "settings": "Einstellungen",
+    "users_admin": "Benutzer",
+    "audit": "Protokoll",
+    "logout": "Abmelden",
+    "messages": "Nachrichten"
+  },
+  "dashboard": {
+    "welcome": "Willkommen zurück, {{email}} 👋",
+    "secret_section": "Dies ist ein geheimer Bereich für Administratoren.",
+    "activity_title": "Letzte Aktivität",
+    "loading_activity": "Aktivität wird geladen...",
+    "no_activity": "Keine Aktivität vorhanden.",
+    "storage_usage": "Speicherplatz",
+    "storage_total": "Gesamtkapazität",
+    "storage_used": "Genutzt",
+    "storage_app_size": "App-Größe (Code + DB)",
+    "storage_other_used": "Sonstiges (System, Logs)",
+    "storage_free": "Freier Speicher",
+    "storage_uploads": "Uploads (Fotos)",
+    "storage_uploads_used": "Uploads genutzt (Fotos)",
+    "storage_from_word": "von",
+    "stats": {
+      "services": "Aktive Dienste",
+      "users": "Benutzer / Team",
+      "messages": "Neue Nachrichten"
+    },
+    "quick_actions": "Schnellaktionen",
+    "actions": {
+      "add_content": "Neues Element",
+      "upload_photo": "Foto hochladen",
+      "edit_settings": "Einstellungen bearbeiten"
+    },
+    "system_status": "Systemstatus",
+    "system": {
+      "version": "Systemversion",
+      "database": "Datenbank",
+      "api": "API Backend",
+      "online": "Online"
+    }
+  },
+  "audit": {
+    "title": "Systemverlauf",
+    "total_loaded": "Geladene Einträge: {{count}}",
+    "filter_user": "Benutzer:",
+    "filter_email_placeholder": "@email...",
+    "filter_action": "Aktion:",
+    "filter_action_all": "Alle Aktionen",
+    "action_login": "Anmeldung",
+    "action_logout": "Abmeldung",
+    "action_update": "Änderungen",
+    "action_delete": "Löschen",
+    "filter_from": "Von:",
+    "filter_to": "Bis:",
+    "empty_state": "Keine Einträge für diesen Filter.",
+    "load_more_btn": "Mehr Einträge laden 👇",
+    "new_records_separator": "Neue Einträge ⬇️",
+    "end_of_list": "Ende der Liste erreicht.",
+    "loading_more": "Laden...",
+    "search_btn": "Suchen 🔍",
+    "reset_filters": "Filter zurücksetzen"
+  },
+  "categories": {
+    "title": "Kategorien",
+    "add_btn": "Neue Kategorie",
+    "table": {
+      "image": "Bild",
+      "name": "Name",
+      "slug": "URL (Slug)",
+      "actions": "Aktionen",
+      "position": "Position",
+      "empty": "Noch keine Kategorien.",
+      "delete": "Löschen"
+    },
+    "messages": {
+      "loading": "Kategorien werden geladen...",
+      "error_load": "Kategorien konnten nicht geladen werden.",
+      "confirm_delete": "Möchten Sie die Kategorie „{{name}}“ wirklich löschen?",
+      "error_delete": "Löschen fehlgeschlagen"
+    },
+    "modal": {
+      "title_add": "Neue Kategorie",
+      "title_edit": "Kategorie bearbeiten",
+      "name_label": "Kategoriename",
+      "slug_label": "URL (Slug)",
+      "slug_placeholder": "leer lassen für automatische Erstellung",
+      "desc_label": "Beschreibung",
+      "position_label": "Position (Sortierung)",
+      "image_label": "Bild",
+      "icon_label": "Icon",
+      "delete_image": "Bild löschen",
+      "delete_icon": "Icon löschen",
+      "upload_error": "Fehler beim Hochladen.",
+      "error_save": "Kategorie konnte nicht gespeichert werden.",
+      "uploading": "Wird hochgeladen...",
+      "saving": "Speichern...",
+      "cancel": "Abbrechen",
+      "save": "Speichern",
+      "update": "Aktualisieren"
+    }
+  },
+  "content": {
+    "title": "Inhaltselemente",
+    "add_btn": "Neues Element",
+    "table": {
+      "image": "Vorschau",
+      "category": "Kategorie",
+      "title": "Titel",
+      "price": "Preis/Wert",
+      "status": "Status",
+      "position": "Position",
+      "actions": "Aktionen",
+      "status_published": "Veröffentlicht",
+      "status_draft": "Entwurf",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "empty": "Noch keine Inhalte vorhanden."
+    },
+    "messages": {
+      "loading": "Inhaltselemente werden geladen...",
+      "error_load": "Inhalte konnten nicht geladen werden.",
+      "confirm_delete": "Möchten Sie das Element „{{title}}“ wirklich löschen?",
+      "error_delete": "Löschen fehlgeschlagen"
+    },
+    "modal": {
+      "title_add": "Neues Element",
+      "title_edit": "Element bearbeiten",
+      "category_label": "Kategorie",
+      "title_label": "Titel des Elements",
+      "slug_label": "URL (Slug)",
+      "slug_placeholder": "leer lassen für automatische Erstellung",
+      "desc_label": "Kurzbeschreibung / Perex",
+      "content_label": "Hauptinhalt",
+      "price_label": "Preis/Wert",
+      "position_label": "Position (Sortierung)",
+      "image_label": "Hauptvorschau",
+      "is_published_label": "Element ist veröffentlicht (Sichtbar)",
+      "upload_error": "Fehler beim Hochladen.",
+      "error_save": "Element konnte nicht gespeichert werden.",
+      "uploading": "Wird hochgeladen...",
+      "saving": "Speichern...",
+      "cancel": "Abbrechen",
+      "save": "Speichern",
+      "update": "Aktualisieren",
+      "delete_image": "Vorschau löschen"
+    }
+  },"users": {
+  "title": "Benutzer",
+  "add_btn": "Neuer Benutzer",
+  "table": {
+    "id": "ID",
+    "avatar": "Bild",
+    "email": "E-Mail",
+    "created_at": "Erstellt am",
+    "role": "Rolle",
+    "active": "Aktiv",
+    "actions": "Aktionen",
+    "empty": "Noch keine Benutzer.",
+    "delete": "Löschen"
+  },
+  "roles": {
+    "admin": "Admin",
+    "user": "Benutzer"
+  },
+  "messages": {
+    "loading": "Benutzer werden geladen…",
+    "error_load": "Benutzer konnten nicht geladen werden.",
+    "confirm_delete": "Möchtest du den Benutzer \"{{email}}\" wirklich löschen?",
+    "error_delete": "Fehler beim Löschen des Benutzers.",
+    "toggle_error": "Kontostatus konnte nicht geändert werden. Bitte versuche es erneut."
+  },
+  "modal": {
+    "title_add": "Neuer Benutzer",
+    "email_label": "E-Mail",
+    "is_admin_label": "Administrator",
+    "is_active_label": "Aktives Konto",
+    "temp_password_label": "Temporäres Passwort (an Benutzer weitergeben)",
+    "error_save": "Benutzer konnte nicht gespeichert werden.",
+    "saving": "Speichere…",
+    "save": "Erstellen",
+    "cancel": "Schließen",
+    "copy_password_btn": "Passwort kopieren",
+    "copy_success": "Passwort wurde in die Zwischenablage kopiert.",
+    "copy_error": "Passwort konnte nicht kopiert werden."
+  }
+},
+  "messages": {
+    "title": "Nachrichten",
+    "loading": "Nachrichten werden geladen…",
+    "filter": { "unread_only": "Nur ungelesene" },
+    "placeholder": "Wähle links eine Nachricht aus.",
+    "no_subject": "(kein Betreff)",
+    "badge": { "unread": "Neu" },
+    "empty": {
+      "all": "Noch keine Nachrichten.",
+      "unread": "Keine ungelesenen Nachrichten."
+    },
+    "detail": {
+      "from": "Von",
+      "unknown_name": "Unbekannt"
+    },
+    "actions": {
+      "mark_read": "Als gelesen markieren",
+      "mark_unread": "Als ungelesen markieren"
+    },
+    "list": { "open": "Nachricht öffnen" },
+    "errors": {
+      "load_list": "Nachrichten konnten nicht geladen werden.",
+      "load_detail": "Details der Nachricht konnten nicht geladen werden.",
+      "toggle_read": "Lesestatus konnte nicht aktualisiert werden."
+    }
+  }
+}

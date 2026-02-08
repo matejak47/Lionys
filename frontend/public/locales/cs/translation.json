@@ -1,0 +1,238 @@
+{
+  "app_title": "Můj CMS",
+  "login": {
+    "title": "Přihlášení",
+    "change_required_title": "Změna hesla je vyžadována",
+    "change_info": "Bylo vám přiděleno dočasné heslo. Před prvním použitím systému si prosím nastavte vlastní nové heslo.",
+
+    "email_label": "E-mail",
+    "password_label": "Heslo",
+    "submit_btn": "Přihlásit se",
+
+    "old_password_label": "Původní heslo",
+    "new_password_label": "Nové heslo",
+    "confirm_password_label": "Potvrzení nového hesla",
+    "change_submit_btn": "Změnit heslo",
+
+    "password_mismatch": "Nové heslo a potvrzení se neshodují.",
+    "old_password_error": "Původní heslo není správné.",
+    "generic_error": "Došlo k chybě při zpracování požadavku. Zkuste to prosím znovu."
+  },
+  "menu": {
+    "dashboard": "Přehled",
+    "content_group": "Správa obsahu",
+    "content_items": "Seznam položek",
+    "categories": "Kategorie",
+    "gallery": "Galerie",
+    "settings": "Nastavení",
+    "audit": "Historie (Audit)",
+    "logout": "Odhlásit se",
+    "users_admin": "Uživatelé",
+    "messages": "Zprávy"
+  },
+  "dashboard": {
+    "welcome": "Vítejte zpět, {{email}} 👋",
+    "secret_section": "Tohle je tajná sekce pro správce.",
+    "activity_title": "Poslední aktivita",
+    "loading_activity": "Načítám historii...",
+    "no_activity": "Žádná aktivita.",
+    "storage_usage": "Využití disku",
+    "storage_total": "Celková kapacita",
+    "storage_used": "Využito celkem",
+    "storage_app_size": "Velikost aplikace (Kód+DB)",
+    "storage_other_used": "Ostatní (Systém, Logy)",
+    "storage_free": "Volné místo",
+    "storage_uploads": "Uploads (Fotky)",
+    "storage_uploads_used": "Používá Uploads (Fotky)",
+    "storage_from_word": "z",
+    "stats": {
+      "services": "Aktivní služby",
+      "users": "Uživatelé / Tým",
+      "messages": "Nové zprávy"
+    },
+    "quick_actions": "Rychlé akce",
+    "actions": {
+      "add_content": "Nová položka",
+      "upload_photo": "Nahrát fotku",
+      "edit_settings": "Upravit nastavení"
+    },
+    "system_status": "Stav systému",
+    "system": {
+      "version": "Verze systému",
+      "database": "Databáze",
+      "api": "API Backend",
+      "online": "Online"
+    }
+  },
+  "audit": {
+    "title": "Historie systému",
+    "total_loaded": "Načteno záznamů: {{count}}",
+    "filter_user": "Uživatel:",
+    "filter_email_placeholder": "@email...",
+    "filter_action": "Akce:",
+    "filter_action_all": "Všechny akce",
+    "action_login": "Přihlášení",
+    "action_logout": "Odhlášení",
+    "action_update": "Úpravy",
+    "action_delete": "Mazání",
+    "filter_from": "Od:",
+    "filter_to": "Do:",
+    "empty_state": "Žádné záznamy pro tento filtr.",
+    "load_more_btn": "Načíst další záznamy 👇",
+    "new_records_separator": "Nové záznamy ⬇️",
+    "end_of_list": "Jste na konci historie.",
+    "loading_more": "Načítám...",
+    "search_btn": "Vyhledat 🔍",
+    "reset_filters": "Vymazat filtry"
+  },
+  "categories": {
+    "title": "Kategorie",
+    "add_btn": "Nová kategorie",
+    "table": {
+      "image": "Obrázek",
+      "name": "Název",
+      "slug": "URL (Slug)",
+      "actions": "Akce",
+      "position": "Pozice",
+      "empty": "Zatím žádné kategorie.",
+      "delete": "Smazat"
+    },
+    "messages": {
+      "loading": "Načítám kategorie...",
+      "error_load": "Nepodařilo se načíst kategorie.",
+      "confirm_delete": "Opravdu chceš smazat kategorii \"{{name}}\"?",
+      "error_delete": "Chyba při mazání"
+    },
+    "modal": {
+      "title_add": "Nová kategorie",
+      "title_edit": "Upravit kategorii",
+      "name_label": "Název kategorie",
+      "slug_label": "URL (Slug)",
+      "slug_placeholder": "nechte prázdné pro automatické generování",
+      "desc_label": "Popis",
+      "position_label": "Pozice (řazení)",
+      "image_label": "Obrázek",
+      "icon_label": "Ikonka",
+      "delete_image": "Smazat obrázek",
+      "delete_icon": "Smazat ikonu",
+      "upload_error": "Chyba při nahrávání souboru.",
+      "error_save": "Nepodařilo se uložit kategorii.",
+      "uploading": "Nahrávám...",
+      "saving": "Ukládám...",
+      "cancel": "Zrušit",
+      "save": "Uložit",
+      "update": "Aktualizovat"
+    }
+  },
+  "content": {
+    "title": "Seznam položek obsahu",
+    "add_btn": "Nová položka",
+    "table": {
+      "image": "Náhled",
+      "category": "Kategorie",
+      "title": "Název položky",
+      "price": "Cena/Hodnota",
+      "status": "Stav",
+      "position": "Pozice",
+      "actions": "Akce",
+      "status_published": "Publikováno",
+      "status_draft": "Koncept",
+      "edit": "Upravit",
+      "delete": "Smazat",
+      "empty": "Zatím žádné položky obsahu."
+    },
+    "messages": {
+      "loading": "Načítám obsahové položky...",
+      "error_load": "Nepodařilo se načíst obsahové položky.",
+      "confirm_delete": "Opravdu chceš smazat položku \"{{title}}\"?",
+      "error_delete": "Chyba při mazání"
+    },
+    "modal": {
+      "title_add": "Nová položka",
+      "title_edit": "Upravit položku",
+      "category_label": "Kategorie",
+      "title_label": "Název položky",
+      "slug_label": "URL (Slug)",
+      "slug_placeholder": "nechte prázdné pro automatické generování",
+      "desc_label": "Krátký popis/Perex",
+      "content_label": "Hlavní obsah",
+      "price_label": "Cena/Hodnota",
+      "position_label": "Pozice (řazení)",
+      "image_label": "Hlavní náhled (Thumbnail)",
+      "is_published_label": "Položka je publikovaná (Viditelná)",
+      "upload_error": "Chyba při nahrávání souboru.",
+      "error_save": "Nepodařilo se uložit položku.",
+      "uploading": "Nahrávám...",
+      "saving": "Ukládám...",
+      "cancel": "Zrušit",
+      "save": "Uložit",
+      "update": "Aktualizovat",
+      "delete_image": "Smazat náhled"
+    }
+  },"users": {
+  "title": "Uživatelé",
+  "add_btn": "Nový uživatel",
+  "table": {
+    "id": "ID",
+    "avatar": "Obrázek",
+    "email": "E-mail",
+    "created_at": "Vytvořen",
+    "role": "Role",
+    "active": "Aktivní",
+    "actions": "Akce",
+    "empty": "Zatím žádní uživatelé.",
+    "delete": "Smazat"
+  },
+  "roles": {
+    "admin": "Admin",
+    "user": "Uživatel"
+  },
+  "messages": {
+    "loading": "Načítám uživatele…",
+    "error_load": "Nepodařilo se načíst uživatele.",
+    "confirm_delete": "Opravdu chceš smazat uživatele \"{{email}}\"?",
+    "error_delete": "Chyba při mazání uživatele.",
+    "toggle_error": "Nepodařilo se změnit stav účtu. Zkuste to prosím znovu."
+  },
+  "modal": {
+    "title_add": "Nový uživatel",
+    "email_label": "E-mail",
+    "is_admin_label": "Administrátor",
+    "is_active_label": "Aktivní účet",
+    "temp_password_label": "Dočasné heslo (předat uživateli)",
+    "error_save": "Nepodařilo se uložit uživatele.",
+    "saving": "Ukládám…",
+    "save": "Vytvořit",
+    "cancel": "Zavřít",
+    "copy_password_btn": "Zkopírovat heslo",
+    "copy_success": "Heslo bylo zkopírováno do schránky.",
+    "copy_error": "Nepodařilo se zkopírovat heslo."
+  }
+},
+"messages": {
+    "title": "Zprávy",
+    "loading": "Načítám zprávy…",
+    "filter": { "unread_only": "Jen nepřečtené" },
+    "placeholder": "Vyber zprávu vlevo.",
+    "no_subject": "(bez předmětu)",
+    "badge": { "unread": "Nová" },
+    "empty": {
+      "all": "Zatím žádné zprávy.",
+      "unread": "Žádné nepřečtené zprávy."
+    },
+    "detail": {
+      "from": "Od",
+      "unknown_name": "Neznámý"
+    },
+    "actions": {
+      "mark_read": "Označit jako přečtené",
+      "mark_unread": "Označit jako nepřečtené"
+    },
+    "list": { "open": "Otevřít zprávu" },
+    "errors": {
+      "load_list": "Nepodařilo se načíst zprávy.",
+      "load_detail": "Nepodařilo se načíst detail zprávy.",
+      "toggle_read": "Nepodařilo se změnit stav přečtení."
+    }
+  }
+}

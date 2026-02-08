@@ -1,0 +1,240 @@
+{
+  "app_title": "My CMS",
+  "login": {
+    "title": "Login",
+    "change_required_title": "Password change required",
+    "change_info": "You have been given a temporary password. Please set your own new password before using the system.",
+
+    "email_label": "Email",
+    "password_label": "Password",
+    "submit_btn": "Log in",
+
+    "old_password_label": "Current password",
+    "new_password_label": "New password",
+    "confirm_password_label": "Confirm new password",
+    "change_submit_btn": "Change password",
+
+    "password_mismatch": "New password and confirmation do not match.",
+    "old_password_error": "The current password is not correct.",
+    "generic_error": "An error occurred while processing your request. Please try again."
+  },
+  "menu": {
+    "dashboard": "Dashboard",
+    "content_group": "Content Management",
+    "content_items": "Content Items",
+    "categories": "Categories",
+    "gallery": "Gallery",
+    "settings": "Settings",
+    "audit": "Audit Log",
+    "users_admin": "Users",
+    "logout": "Logout",
+    "messages": "Messages"
+  },
+  "dashboard": {
+    "welcome": "Welcome back, {{email}} 👋",
+    "secret_section": "This is a secret admin-only section.",
+    "activity_title": "Recent Activity",
+    "loading_activity": "Loading activity...",
+    "no_activity": "No activity yet.",
+    "storage_usage": "Disk Usage",
+    "storage_total": "Total Capacity",
+    "storage_used": "Used",
+    "storage_app_size": "App Size (Code + DB)",
+    "storage_other_used": "Other (System, Logs)",
+    "storage_free": "Free Space",
+    "storage_uploads": "Uploads (Photos)",
+    "storage_uploads_used": "Uploads Used (Photos)",
+    "storage_from_word": "of",
+    "stats": {
+      "services": "Active Services",
+      "users": "Users / Team",
+      "messages": "New Messages"
+    },
+    "quick_actions": "Quick Actions",
+    "actions": {
+      "add_content": "New Item",
+      "upload_photo": "Upload Photo",
+      "edit_settings": "Edit Settings"
+    },
+    "system_status": "System Status",
+    "system": {
+      "version": "System Version",
+      "database": "Database",
+      "api": "API Backend",
+      "online": "Online"
+    }
+  },
+  "audit": {
+    "title": "System History",
+    "total_loaded": "Loaded entries: {{count}}",
+    "filter_user": "User:",
+    "filter_email_placeholder": "@email...",
+    "filter_action": "Action:",
+    "filter_action_all": "All actions",
+    "action_login": "Login",
+    "action_logout": "Logout",
+    "action_update": "Updates",
+    "action_delete": "Delete",
+    "filter_from": "From:",
+    "filter_to": "To:",
+    "empty_state": "No records for this filter.",
+    "load_more_btn": "Load more records 👇",
+    "new_records_separator": "New records ⬇️",
+    "end_of_list": "You reached the end of history.",
+    "loading_more": "Loading...",
+    "search_btn": "Search 🔍",
+    "reset_filters": "Reset filters"
+  },
+  "categories": {
+    "title": "Categories",
+    "add_btn": "New Category",
+    "table": {
+      "image": "Image",
+      "name": "Name",
+      "slug": "URL (Slug)",
+      "actions": "Actions",
+      "position": "Position",
+      "empty": "No categories yet.",
+      "delete": "Delete"
+    },
+    "messages": {
+      "loading": "Loading categories...",
+      "error_load": "Failed to load categories.",
+      "confirm_delete": "Do you really want to delete category \"{{name}}\"?",
+      "error_delete": "Delete failed"
+    },
+    "modal": {
+      "title_add": "New Category",
+      "title_edit": "Edit Category",
+      "name_label": "Category Name",
+      "slug_label": "URL (Slug)",
+      "slug_placeholder": "leave empty for automatic generation",
+      "desc_label": "Description",
+      "position_label": "Position (Sorting)",
+      "image_label": "Image",
+      "icon_label": "Icon",
+      "delete_image": "Delete image",
+      "delete_icon": "Delete icon",
+      "upload_error": "Image upload failed.",
+      "error_save": "Failed to save category.",
+      "uploading": "Uploading...",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "save": "Save",
+      "update": "Update"
+    }
+  },
+  "content": {
+    "title": "Content Items",
+    "add_btn": "New Item",
+    "table": {
+      "image": "Thumbnail",
+      "category": "Category",
+      "title": "Title",
+      "price": "Price/Value",
+      "status": "Status",
+      "position": "Position",
+      "actions": "Actions",
+      "status_published": "Published",
+      "status_draft": "Draft",
+      "edit": "Edit",
+      "delete": "Delete",
+      "empty": "No content items yet."
+    },
+    "messages": {
+      "loading": "Loading content items...",
+      "error_load": "Failed to load content items.",
+      "confirm_delete": "Do you really want to delete item \"{{title}}\"?",
+      "error_delete": "Failed to delete item."
+    },
+    "modal": {
+      "title_add": "New Item",
+      "title_edit": "Edit Item",
+      "category_label": "Category",
+      "title_label": "Item Title",
+      "slug_label": "URL (Slug)",
+      "slug_placeholder": "leave empty for automatic generation",
+      "desc_label": "Short Description / Perex",
+      "content_label": "Main Content",
+      "price_label": "Price/Value",
+      "position_label": "Position (Sorting)",
+      "image_label": "Main Thumbnail",
+      "is_published_label": "Item is published (Visible)",
+      "upload_error": "Image upload failed.",
+      "error_save": "Failed to save item.",
+      "uploading": "Uploading...",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "save": "Save",
+      "update": "Update",
+      "delete_image": "Delete thumbnail"
+    }
+  },
+  "users": {
+  "title": "Users",
+  "add_btn": "New user",
+  "table": {
+    "id": "ID",
+    "avatar": "Avatar",
+    "email": "E-mail",
+    "created_at": "Created at",
+    "role": "Role",
+    "active": "Active",
+    "actions": "Actions",
+    "empty": "No users yet.",
+    "delete": "Delete"
+  },
+  "roles": {
+    "admin": "Admin",
+    "user": "User"
+  },
+  "messages": {
+    "loading": "Loading users…",
+    "error_load": "Failed to load users.",
+    "confirm_delete": "Are you sure you want to delete user \"{{email}}\"?",
+    "error_delete": "Error while deleting user.",
+    "toggle_error": "Could not change account state. Please try again."
+  },
+  "modal": {
+    "title_add": "New user",
+    "email_label": "E-mail",
+    "is_admin_label": "Administrator",
+    "is_active_label": "Active account",
+    "temp_password_label": "Temporary password (give to the user)",
+    "error_save": "Failed to save user.",
+    "saving": "Saving…",
+    "save": "Create",
+    "cancel": "Close",
+    "copy_password_btn": "Copy password",
+    "copy_success": "Password copied to clipboard.",
+    "copy_error": "Failed to copy password."
+  }
+},
+  "messages": {
+    "title": "Messages",
+    "loading": "Loading messages…",
+    "filter": { "unread_only": "Unread only" },
+    "placeholder": "Select a message on the left.",
+    "no_subject": "(no subject)",
+    "badge": { "unread": "New" },
+    "empty": {
+      "all": "No messages yet.",
+      "unread": "No unread messages."
+    },
+    "detail": {
+      "from": "From",
+      "unknown_name": "Unknown"
+    },
+    "actions": {
+      "mark_read": "Mark as read",
+      "mark_unread": "Mark as unread"
+    },
+    "list": { "open": "Open message" },
+    "errors": {
+      "load_list": "Failed to load messages.",
+      "load_detail": "Failed to load message details.",
+      "toggle_read": "Failed to update read status."
+    }
+  }
+
+}
