@@ -17,8 +17,6 @@ services:
       SECRET_KEY: ${SECRET_KEY}
     volumes:
       - ./backend/uploads:/app/uploads
-    ports:
-      - "8000:8000"       # ✅ backend dostupný z hosta (test)
     depends_on:
       - db
     restart: unless-stopped
@@ -26,7 +24,7 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "80:80"           # ✅ web dostupný z hosta
+      - "127.0.0.1:3000:80"   # ⬅️ DŮLEŽITÉ
     depends_on:
       - backend
     restart: unless-stopped
