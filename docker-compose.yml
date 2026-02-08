@@ -19,35 +19,39 @@ services:
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
       - ./backend:/app
-      - static_volume:/app/app/static/uploads # Aby fotky nezmizely po restartu
+      - static_volume:/app/app/static/uploads
       - ./backend/uploads:/app/uploads
     ports:
       - "8000:8000"
     environment:
       - DATABASE_URL=postgresql+asyncpg://${DB_USER}:${DB_PASSWORD}@db/${DB_NAME}
       - SECRET_KEY=${SECRET_KEY}
+
+      # ✅ ADMIN SEED – NATVRDO, NEZ .env
+      - ADMIN_EMAIL=admin@admin.eu
+      - ADMIN_PASSWORD=admin
+
     depends_on:
       - db
 
   # --- 3. FRONTEND (React + Vite) ---
   frontend:
     build: ./frontend
-    # Důležité: --host zpřístupní web i mimo kontejner
-    command: npm run dev -- --host 
+    command: npm run dev -- --host
     volumes:
       - ./frontend:/app
-      - /app/node_modules # Trik, aby se nemíchaly knihovny s tvým PC
+      - /app/node_modules
     ports:
       - "5173:5173"
 
-# --- 4. NGINX PROXY MANAGER (Policista) ---
+  # --- 4. NGINX PROXY MANAGER ---
   nginx:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
-      - '80:80'      # Veřejný HTTP port
-      - '81:81'      # Admin rozhraní (tady to budeš nastavovat)
-      - '443:443'    # Veřejný HTTPS port
+      - '80:80'
+      - '81:81'
+      - '443:443'
     volumes:
       - ./nginx/data:/data
       - ./nginx/letsencrypt:/etc/letsencrypt
