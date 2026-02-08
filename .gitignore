@@ -205,3 +205,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# nginx proxy manager runtime data
+nginx/data/
+nginx/letsencrypt/
