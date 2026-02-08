@@ -1,2 +1,2 @@
 # Redaction-System
-Redakční systém pro firmys
+Redakční systém pro firmy
