@@ -19,6 +19,8 @@ services:
     environment:
       DATABASE_URL: postgresql+asyncpg://${DB_USER}:${DB_PASSWORD}@db/${DB_NAME}
       SECRET_KEY: ${SECRET_KEY}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
     volumes:
       - ./backend/uploads:/app/uploads
     restart: unless-stopped
