@@ -10,48 +10,44 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     // --- FUNKCE: PŘIHLÁŠENÍ ---
-    const login = async (email, password) => {
-        try {
-            const formData = new FormData();
-            formData.append('username', email);
-            formData.append('password', password);
+   const login = async (email, password) => {
+  try {
+    // OAuth2PasswordRequestForm => application/x-www-form-urlencoded
+    const body = new URLSearchParams();
+    body.append("username", email);
+    body.append("password", password);
 
-            const response = await api.post('/auth/login', formData, {
-                headers: { 'Content-Type': undefined }
-            });
+    const response = await api.post("/auth/login", body, {
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    });
 
-            const data = response.data; // Obsahuje: access_token, force_password_change, is_admin
+    const data = response.data;
 
-            // 1. KONTROLA: Vynucená změna hesla
-            if (data.force_password_change === true) {
-                // NEUKLÁDÁME token do localStorage! Vrátíme ho pro použití na Login stránce.
-                return { 
-                    success: true, 
-                    needsPasswordChange: true, 
-                    tempToken: data.access_token 
-                };
-            }
+    // 1) vynucená změna hesla
+    if (data.force_password_change === true) {
+      return {
+        success: true,
+        needsPasswordChange: true,
+        tempToken: data.access_token,
+      };
+    }
 
-            // 2. STANDARDNÍ PŘIHLÁŠENÍ: Uložíme token a načteme data.
-            localStorage.setItem('access_token', data.access_token);
-            
-            // Nastavíme Auth hlavičku v Axiosu pro budoucí loadUser/API volání
-            api.defaults.headers.common['Authorization'] = `Bearer ${data.access_token}`;
-            
-            await loadUser();
-            
-            return { success: true };
+    // 2) standardní login
+    localStorage.setItem("access_token", data.access_token);
+    api.defaults.headers.common["Authorization"] = `Bearer ${data.access_token}`;
 
-        } catch (error) {
-            console.error("Chyba přihlášení:", error);
-            
-            let errorMessage = "Chyba přihlášení";
-            if (error.response && error.response.data && typeof error.response.data.detail === 'string') {
-                errorMessage = error.response.data.detail;
-            }
-            return { success: false, error: errorMessage };
-        }
-    };
+    await loadUser();
+    return { success: true };
+  } catch (error) {
+    console.error("Chyba přihlášení:", error);
+
+    let errorMessage = "Chyba přihlášení";
+    if (error.response?.data?.detail && typeof error.response.data.detail === "string") {
+      errorMessage = error.response.data.detail;
+    }
+    return { success: false, error: errorMessage };
+  }
+};
 
     // --- NOVÁ FUNKCE: ZMĚNA HESLA (Adminem vynucená) ---
     const changePassword = async (tempToken, oldPassword, newPassword) => {
