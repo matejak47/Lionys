@@ -40,18 +40,13 @@ services:
   nginx:
     image: jc21/nginx-proxy-manager:latest
     restart: unless-stopped
-    ports:
-      - "80:80"
-      - "81:81"
-      - "443:443"
+    network_mode: host
     volumes:
       - ./nginx/data:/data
       - ./nginx/letsencrypt:/etc/letsencrypt
     depends_on:
       - frontend
       - backend
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
 volumes:
   postgres_data:
